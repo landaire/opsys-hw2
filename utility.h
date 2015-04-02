@@ -10,6 +10,8 @@
 
 #define MAX 100
 
+void flushStdin();
+
 int menu();
 FILE * openFile();
 void strip(char *array);

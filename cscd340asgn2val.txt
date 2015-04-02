@@ -1,0 +1,265 @@
+vagrant@precise32:/opsys/hw2$ valgrind --leak-check=full ./asgn2a
+==1315== Memcheck, a memory error detector
+==1315== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==1315== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==1315== Command: ./asgn2a
+==1315==
+Enter the path of the file you'd like to open: students.txt
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+5
+
+Name (leave blank if deleting):
+ID: 12345
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+2
+
+Name (leave blank if deleting): Testing
+ID: 12345
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+3
+
+Name (leave blank if deleting): Testing123123123
+ID: 532897
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+1
+
+12345: Testing
+7654: Adam Scott
+6663: John Smith
+9988: Tony Tian
+1456: Dan Tappan
+532897: Testing123123123
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+4
+
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+6
+
+==1315==
+==1315== HEAP SUMMARY:
+==1315==     in use at exit: 0 bytes in 0 blocks
+==1315==   total heap usage: 42 allocs, 42 frees, 4,221 bytes allocated
+==1315==
+==1315== All heap blocks were freed -- no leaks are possible
+==1315==
+==1315== For counts of detected and suppressed errors, rerun with: -v
+==1315== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+vagrant@precise32:/opsys/hw2$ make asgn2
+gcc -c -o cscd340asgn2.o cscd340asgn2.c -I.
+cscd340asgn2.c: In function 'main':
+cscd340asgn2.c:14:35: error: 'buildWord' undeclared (first use in this function)
+cscd340asgn2.c:14:35: note: each undeclared identifier is reported only once for each func
+tion it appears in
+cscd340asgn2.c:23:39: error: 'printWord' undeclared (first use in this function)
+cscd340asgn2.c:32:34: error: 'compareTwoWords' undeclared (first use in this function)
+cscd340asgn2.c:35:69: error: 'cleanWord' undeclared (first use in this function)
+make: *** [cscd340asgn2.o] Error 1
+vagrant@precise32:/opsys/hw2$ make asgn2
+gcc -c -o cscd340asgn2.o cscd340asgn2.c -I.
+gcc -c -o utility.o utility.c -I.
+gcc -c -o words.o words.c -I.
+gcc -c -o linked_list.o linked_list.c -I.
+gcc -std=ansi -o asgn2 cscd340asgn2.o utility.o words.o linked_list.o -I.
+vagrant@precise32:/opsys/hw2$ valgrind --leak-check=full ./asgn2
+==1358== Memcheck, a memory error detector
+==1358== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==1358== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==1358== Command: ./asgn2
+==1358==
+Enter the path of the file you'd like to open: words.txt
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+1
+
+b
+babble
+babe
+babel
+baboon
+babushka
+baby
+baccalaureate
+bacchanalia
+bachelor
+bacillus
+back
+a
+aardvark
+aback
+abacus
+abaft
+abalone
+abandon
+abandoned
+abase
+abash
+abate
+azure
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+2
+
+asdfasfdas
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+3
+
+fasdfsadf
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+4
+
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+1
+
+a
+aardvark
+aback
+abacus
+abaft
+abalone
+abandon
+abandoned
+abase
+abash
+abate
+asdfasfdas
+azure
+b
+babble
+babe
+babel
+baboon
+babushka
+baby
+baccalaureate
+bacchanalia
+bachelor
+bacillus
+back
+fasdfsadf
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+5
+
+b
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+1
+
+a
+aardvark
+aback
+abacus
+abaft
+abalone
+abandon
+abandoned
+abase
+abash
+abate
+asdfasfdas
+azure
+babble
+babe
+babel
+baboon
+babushka
+baby
+baccalaureate
+bacchanalia
+bachelor
+bacillus
+back
+fasdfsadf
+
+1) Print the List
+2) Add First
+3) Add Last
+4) Sort the List (ascending order)
+5) Delete a word
+6) Quit --
+6
+
+==1358==
+==1358== HEAP SUMMARY:
+==1358==     in use at exit: 0 bytes in 0 blocks
+==1358==   total heap usage: 93 allocs, 93 frees, 3,257 bytes allocated
+==1358==
+==1358== All heap blocks were freed -- no leaks are possible
+==1358==
+==1358== For counts of detected and suppressed errors, rerun with: -v
+==1358== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+vagrant@precise32:/opsys/hw2$

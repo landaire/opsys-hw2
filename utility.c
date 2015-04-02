@@ -15,7 +15,7 @@ int menu() {
     int read = 0;
 
     while (response < 1 || response > 6 || read != 1) {
-        printf("1) Print the List\n");
+        printf("\n1) Print the List\n");
         printf("2) Add First\n");
         printf("3) Add Last\n");
         printf("4) Sort the List (ascending order)\n");
@@ -24,6 +24,7 @@ int menu() {
 
         read = scanf("%d", &response);
         flushStdin();
+        printf("\n");
     }
 
 

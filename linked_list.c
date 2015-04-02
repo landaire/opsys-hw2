@@ -92,6 +92,7 @@ void removeItem(LinkedList * theList, Node * nn, void (*removeData)(void *), int
         currentIndex++;
     }
 
+    removeData(nn->data);
     free(nn);
 }
 
@@ -106,11 +107,11 @@ void clearList(LinkedList * theList, void (*removeData)(void *)) {
 
         removeData(currentNode->data);
 
+        free(currentNode->prev);
         theList->size--;
     }
 
-    theList->head->next = theList->head;
-    theList->head->prev = theList->head;
+    free(currentNode);
 }
 
 /**
